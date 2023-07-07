@@ -18,20 +18,26 @@ const Products = () => {
       productName: "tabLet",
     },
   ]);
+  const handleDelete = (productsId) => {
+    setProducts(products.filter((p) => p.id !== productsId));
+  };
 
   return (
     <>
       {products.map((P, index) => (
         <>
-          <Product kay={index} productName={P.productName} count={P.count}>
+          <Product
+            kay={index}
+            productName={P.productName}
+            count={P.count}
+            handleDelete={handleDelete}
+            id={P.id}
+          >
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo
             ratione repellat, obcaecati omnis nesciunt atque temporibus, ducimus
           </Product>
         </>
       ))}
-
-      {/* <Product productName="lapTop" />
-      <Product productName="Phone" /> */}
     </>
   );
 };

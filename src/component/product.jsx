@@ -6,7 +6,7 @@ function Product(props) {
     setNumber(number - 1);
   };
   const handleDelete = () => {
-    setNumber(number - number);
+    props.handleDelete(props.id);
   };
   return (
     <>
